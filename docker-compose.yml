@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  talker:
+    build: talker
+    container_name: talker
+    environment:
+      - "ROS_MASTER_URI=http://192.168.122.210:11311"
+    command: ./entrypoint.sh
+
+  listener:
+    build: listener
+    container_name: listener
+    environment:
+      - "ROS_MASTER_URI=http://192.168.122.210:11311"
+    command: ./entrypoint.sh
